@@ -30,8 +30,14 @@ $('.sortable').dragswap({
     dropClass: 'drop', // the class to add when the element is dropped
     dropAnimation: false, // do you want to detect animation end?
     exclude: '.disabled', // excluded elements class
-    prefix: getPrefix() // function to get the prefix of the browser
+    prefix: getPrefix(), // function to get the prefix of the browser
+    dropComplete: function(){} // what to do when the drop is complete
 });
+```
+
+``` javascript
+$('.sortable').dragswap('toArray');
+// returns the id of each element in the current order
 ```
 
 Drop Animation
@@ -41,8 +47,8 @@ There is a function to detect animation end in the drop handler. Enabling dropAn
 To Do
 -----
 
-* serialize/toArray/toJSON export
-* afterDrop function for AJAX save or something
+* control the attributes to be swapped
+* serialize/toJSON export
 * elements actually sort and don't just swap
 * test in <IE9 because classList should be used
 * connected lists
